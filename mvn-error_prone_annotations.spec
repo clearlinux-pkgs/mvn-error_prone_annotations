@@ -4,7 +4,7 @@
 #
 Name     : mvn-error_prone_annotations
 Version  : 2.1.3
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar
 Source0  : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar
 Source1  : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.pom
