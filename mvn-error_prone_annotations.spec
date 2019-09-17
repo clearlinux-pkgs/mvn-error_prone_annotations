@@ -4,15 +4,20 @@
 #
 Name     : mvn-error_prone_annotations
 Version  : 2.1.3
-Release  : 2
+Release  : 3
 URL      : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar
 Source0  : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar
 Source1  : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.pom
-Source2  : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_parent/2.1.3/error_prone_parent-2.1.3.pom
+Source2  : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar
+Source3  : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.pom
+Source4  : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_parent/2.1.3/error_prone_parent-2.1.3.pom
+Source5  : https://repo1.maven.org/maven2/com/google/errorprone/error_prone_parent/2.2.0/error_prone_parent-2.2.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: mvn-error_prone_annotations-data = %{version}-%{release}
+BuildRequires : apache-maven
+BuildRequires : buildreq-mvn
 
 %description
 No detailed description available
@@ -26,18 +31,28 @@ data components for the mvn-error_prone_annotations package.
 
 
 %prep
+%setup -q -n META-INF
 
 %build
 
 %install
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_parent/2.1.3
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_parent/2.1.3
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_parent/2.1.3/error_prone_parent-2.1.3.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_parent/2.2.0
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/error_prone_parent/2.2.0/error_prone_parent-2.2.0.pom
 
 
 %files
@@ -47,4 +62,7 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/google/errorprone/e
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar
 /usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.pom
+/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.jar
+/usr/share/java/.m2/repository/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.pom
 /usr/share/java/.m2/repository/com/google/errorprone/error_prone_parent/2.1.3/error_prone_parent-2.1.3.pom
+/usr/share/java/.m2/repository/com/google/errorprone/error_prone_parent/2.2.0/error_prone_parent-2.2.0.pom
